@@ -31,7 +31,7 @@ module.exports = {
         let item = new Pet(req.body);
 
         item._id = new mongoose.Types.ObjectId();
-        // item.name = req.body.name;
+
         item.save( err => {
             if (!err) {
                 res.json({message: "Success", data: item})
@@ -43,7 +43,7 @@ module.exports = {
     }, 
 
     updateById: (req, res) => {
-        // const ObjectId = mongoose.Types.ObjectId; 
+
         const query = {'_id': req.params.id};
         console.log(req.body);
         Pet.findByIdAndUpdate(query, {
@@ -82,8 +82,7 @@ module.exports = {
         Pet.findOne({_id: new ObjectId(req.params.id)})
             .exec((err, item)=>{
                 if (!err) {
-                    // let q = item.quotes.id(req.body.quote_id);
-                    // q.vote = parseInt(q.vote) + parseInt(req.body.vote);
+
                     item.likes = parseInt(item.likes) + 1;
                     item.save((err2, item2) => {
                         if (err2) {

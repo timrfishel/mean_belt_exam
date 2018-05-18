@@ -8,7 +8,6 @@
         <label class="control-label col-sm-3" for="email">Pet name:</label>
         <div class="col-sm-9">
   
-          <!-- <span [hidden]="name.valid" class="text-danger">*Name must be at least 3 characters in length.</span> -->
   
           <span [hidden]="!errors.name"  class="text-danger">*{{errors.name.message}}</span>
           <input type="text" class="form-control" id="name" placeholder="Enter name"

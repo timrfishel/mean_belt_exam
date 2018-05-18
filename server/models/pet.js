@@ -43,10 +43,5 @@ module.exports = (() => {
     
     PetSchema.plugin(uniqueValidator, { message: 'The {PATH} {VALUE} already exists.' });
     mongoose.model('Pet', PetSchema);
-    // Apply the uniqueValidator plugin to UserSchema.
-    // UserSchema.plugin(uniqueValidator);
-    // You have access to all of the standard Mongoose error message templating:
-    // {PATH}
-    // {VALUE}
-    // {TYPE}
+
 })();
